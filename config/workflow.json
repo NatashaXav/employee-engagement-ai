@@ -9,7 +9,7 @@
   "inputs": {
     "survey_data_source": "SurveyMonkey API, Google Sheets, or CSV upload",
     "comment_column_name": "What could we do to improve your experience?",
-    "openai_api_key": "${OPENAI_API_KEY}",
+    "gemini_api_key": "${GEMINI_API_KEY}",
     "analysis_themes": [
       "Leadership & Management",
       "Compensation & Benefits",
@@ -34,7 +34,7 @@
     {
       "id": 3,
       "action": "analyze_comment",
-      "tool": "OpenAI GPT-4"
+      "tool": "Google Gemini"
     },
     {
       "id": 4,
@@ -44,7 +44,7 @@
     {
       "id": 5,
       "action": "generate_summary_report",
-      "tool": "OpenAI GPT-4"
+      "tool": "Google Gemini"
     },
     {
       "id": 6,

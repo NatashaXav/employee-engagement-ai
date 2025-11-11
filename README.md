@@ -2,7 +2,7 @@
 
 **Business Goal**: Automate the analysis of qualitative feedback from employee surveys to uncover actionable insights, identify key themes, and measure sentiment.
 
-**Tools**: OpenAI GPT-4, No-Code Automation (Make.com/Zapier), Survey Tool APIs (SurveyMonkey, Google Forms)
+**Tools**: Gemini Gemini 1.5, No-Code Automation (Make.com/Zapier), Survey Tool APIs (SurveyMonkey, Google Forms)
 
 **Business Impact**: Saves 40+ hours of manual analysis per survey, identifies flight risks 50% earlier, and provides clear, data-backed priorities for HR initiatives.
 
@@ -26,7 +26,7 @@ Companies conduct engagement surveys, but insights are buried in thousands of fr
 
 An AI-powered workflow that automatically analyzes qualitative survey feedback:
 1. Ingests survey responses directly from tools like SurveyMonkey or Google Sheets.
-2. Uses GPT-4 to perform sentiment analysis (Positive, Negative, Neutral) on each comment.
+2. Uses Gemini 1.5 to perform sentiment analysis (Positive, Negative, Neutral) on each comment.
 3. Identifies and categorizes primary themes ("Career Growth", "Work-Life Balance", "Management").
 4. Generates an executive summary with key findings, sentiment breakdown, and illustrative quotes.
 5. Delivers a structured report to HR and leadership teams.
@@ -56,4 +56,4 @@ An AI-powered workflow that automatically analyzes qualitative survey feedback:
 **Date**: January 2025  
 **Status**: Production-Ready
 
-**Note**: Requires OpenAI API key. Ensure survey data is handled in accordance with company privacy policies and GDPR.
+**Note**: Requires Google Gemini AI key. Ensure survey data is handled in accordance with company privacy policies and GDPR.
