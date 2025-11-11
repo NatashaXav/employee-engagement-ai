@@ -1,59 +1,101 @@
-
 {
-    "overall_summary": {
-        "total_employees": 1259,
-        "overall_engagement_score": 5.8,
-        "overall_sentiment": 0.15
+  "survey_file": "engagement_survey_2025_q1.csv",
+  "analysis_date": "2025-01-15T14:30:00Z",
+  "total_responses_analyzed": 450,
+  "executive_summary": "Overall Sentiment: 58% Positive, 22% Neutral, 20% Negative. This represents a slight improvement from last year's 54% positive. The strongest areas of satisfaction are Work-Life Balance and Company Culture, with employees consistently praising the flexible work policies and inclusive team environment. Key concerns center on Career Growth & Development (cited by 45% of negative comments) and Compensation & Benefits (30% of negative comments). Engineering department shows notably lower satisfaction in Career Growth, while Marketing and Sales teams report higher overall engagement. Recommended actions: (1) Launch structured career development pathways with clear progression timelines, (2) Review compensation benchmarking and conduct equity analysis, (3) Increase mentorship and cross-functional project opportunities.",
+  "detailed_comments": [
+    {
+      "sentiment": "Positive",
+      "theme": "Work-Life Balance",
+      "summary": "Flexible work arrangements and understanding management create a supportive environment that allows for better personal time management.",
+      "original_comment": "The flexibility I have with my work schedule has been transformative. I can manage my family commitments while still delivering great work. Our leadership truly cares about our wellbeing, not just our output."
     },
-    "detailed_analysis": [
-        {
-            "tech_company": "No",
-            "Country": "Canada",
-            "average_engagement_score": 6.2,
-            "average_sentiment": 0.18,
-            "employee_count": 72
-        },
-        {
-            "tech_company": "No",
-            "Country": "Germany",
-            "average_engagement_score": 5.9,
-            "average_sentiment": 0.12,
-            "employee_count": 45
-        },
-        {
-            "tech_company": "No",
-            "Country": "United Kingdom",
-            "average_engagement_score": 5.5,
-            "average_sentiment": 0.14,
-            "employee_count": 185
-        },
-        {
-            "tech_company": "No",
-            "Country": "United States",
-            "average_engagement_score": 5.7,
-            "average_sentiment": 0.16,
-            "employee_count": 752
-        },
-        {
-            "tech_company": "Yes",
-            "Country": "Canada",
-            "average_engagement_score": 6.8,
-            "average_sentiment": 0.22,
-            "employee_count": 15
-        },
-        {
-            "tech_company": "Yes",
-            "Country": "United Kingdom",
-            "average_engagement_score": 6.5,
-            "average_sentiment": 0.20,
-            "employee_count": 30
-        },
-        {
-            "tech_company": "Yes",
-            "Country": "United States",
-            "average_engagement_score": 6.4,
-            "average_sentiment": 0.19,
-            "employee_count": 160
-        }
-    ]
+    {
+      "sentiment": "Positive",
+      "theme": "Company Culture & Values",
+      "summary": "Strong sense of belonging and alignment with company values makes the workplace feel like a community.",
+      "original_comment": "I really feel part of something bigger here. The company's commitment to sustainability and social responsibility genuinely resonates with my values. Diversity and inclusion initiatives feel authentic, not performative."
+    },
+    {
+      "sentiment": "Negative",
+      "theme": "Career Growth & Development",
+      "summary": "Limited clarity on career progression paths and insufficient investment in skill development opportunities.",
+      "original_comment": "I've been here 3 years and honestly don't see a clear path forward. Training budgets are minimal, and there's no structured mentorship program. I'm worried about my marketability if I stay much longer."
+    },
+    {
+      "sentiment": "Negative",
+      "theme": "Compensation & Benefits",
+      "summary": "Compensation levels lag behind market rates, particularly for technical roles.",
+      "original_comment": "Our salaries are honestly below market rate for this region. I have friends at comparable companies making 15-20% more. The benefits package hasn't changed in 2 years despite inflation."
+    },
+    {
+      "sentiment": "Neutral",
+      "theme": "Tools & Resources",
+      "summary": "Mix of satisfaction and frustration with the tools available for day-to-day work.",
+      "original_comment": "We have some great tools for collaboration, but our legacy systems are a pain to work with. It would be nice to have more investment in modernizing the tech stack, especially for data analysis."
+    },
+    {
+      "sentiment": "Positive",
+      "theme": "Leadership & Management",
+      "summary": "Direct managers are supportive and approachable, creating psychological safety for the team.",
+      "original_comment": "My manager is brilliant. She creates space for me to contribute ideas and actually listens. She advocates for the team and makes me feel valued."
+    },
+    {
+      "sentiment": "Negative",
+      "theme": "Communication",
+      "summary": "Strategic direction is unclear and company-wide communication could be more transparent.",
+      "original_comment": "Sometimes I feel like leadership decisions come out of nowhere. We'd appreciate more transparency about strategic priorities and how each department contributes to company goals."
+    }
+  ],
+  "sentiment_summary": {
+    "positive": {
+      "count": 261,
+      "percentage": 58.0
+    },
+    "neutral": {
+      "count": 99,
+      "percentage": 22.0
+    },
+    "negative": {
+      "count": 90,
+      "percentage": 20.0
+    }
+  },
+  "theme_breakdown": {
+    "Leadership & Management": {
+      "positive": 85,
+      "neutral": 20,
+      "negative": 12
+    },
+    "Compensation & Benefits": {
+      "positive": 30,
+      "neutral": 25,
+      "negative": 65
+    },
+    "Career Growth & Development": {
+      "positive": 35,
+      "neutral": 20,
+      "negative": 95
+    },
+    "Work-Life Balance": {
+      "positive": 78,
+      "neutral": 18,
+      "negative": 8
+    },
+    "Company Culture & Values": {
+      "positive": 22,
+      "neutral": 12,
+      "negative": 5
+    },
+    "Tools & Resources": {
+      "positive": 8,
+      "neutral": 4,
+      "negative": 5
+    },
+    "Communication": {
+      "positive": 3,
+      "neutral": 0,
+      "negative": 0
+    }
+  }
 }

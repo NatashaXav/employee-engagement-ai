@@ -1,21 +1,17 @@
 {
   "workflow_name": "AI Employee Engagement Survey Analyzer",
   "description": "Analyzes free-text comments from employee surveys for sentiment and key themes.",
-  "tools_compatible": [
-    "Make.com",
-    "Zapier",
-    "n8n"
-  ],
+  "tools_compatible": ["Make.com", "Zapier", "n8n"],
   "inputs": {
     "survey_data_source": "SurveyMonkey API, Google Sheets, or CSV upload",
     "comment_column_name": "What could we do to improve your experience?",
-    "gemini_api_key": "${GEMINI_API_KEY}",
+    "openai_api_key": "${OPENAI_API_KEY}",
     "analysis_themes": [
       "Leadership & Management",
       "Compensation & Benefits",
-      "Career Growth",
+      "Career Growth & Development",
       "Work-Life Balance",
-      "Company Culture",
+      "Company Culture & Values",
       "Tools & Resources",
       "Communication"
     ]
@@ -24,37 +20,71 @@
     {
       "id": 1,
       "action": "trigger_survey_completion",
-      "tool": "SurveyMonkey / Google Sheets Webhook"
+      "tool": "SurveyMonkey / Google Sheets Webhook",
+      "config": {
+        "trigger": "On survey completion or new row added",
+        "output": "survey_responses_array"
+      }
     },
     {
       "id": 2,
       "action": "iterate_responses",
-      "tool": "Iterator"
+      "tool": "Iterator",
+      "config": {
+        "array": "{{survey_responses_array}}",
+        "output": "single_response"
+      }
     },
     {
       "id": 3,
       "action": "analyze_comment",
-      "tool": "Google Gemini"
+      "tool": "OpenAI GPT-4",
+      "config": {
+        "model": "gpt-4-turbo",
+        "prompt": "You are an HR analyst. Analyze the following employee comment. Identify the sentiment and classify it into one of the primary themes provided. Extract a short, anonymized summary.\n\nThemes: {{analysis_themes}}\n\nComment: \"{{single_response.comment_column_name}}\"\n\nReturn a single JSON object with keys: 'sentiment' (Positive, Negative, Neutral), 'theme', and 'summary'.",
+        "output": "comment_analysis"
+      }
     },
     {
       "id": 4,
       "action": "aggregate_results",
-      "tool": "Data Store / Array Aggregator"
+      "tool": "Data Store / Array Aggregator",
+      "config": {
+        "action": "Append to data store",
+        "key": "survey_analysis_results",
+        "data": "{{comment_analysis}}"
+      }
     },
     {
       "id": 5,
       "action": "generate_summary_report",
-      "tool": "Google Gemini"
+      "tool": "OpenAI GPT-4",
+      "config": {
+        "model": "gpt-4-turbo",
+        "prompt": "Analyze this aggregated survey analysis data and generate an executive summary. The summary should include:\n1. An overview of the overall sentiment.\n2. A breakdown of the top 3 positive and negative themes.\n3. For each of those themes, provide a brief explanation and one or two representative (but anonymized) quotes.\n\nData:\n{{aggregated_results_json}}\n\nFormat as a well-structured report.",
+        "output": "executive_summary_text"
+      }
     },
     {
       "id": 6,
       "action": "deliver_report",
-      "tool": "Email / Slack"
+      "tool": "Email / Slack",
+      "config": {
+        "to": "hr_leadership@company.com",
+        "subject": "Employee Engagement Survey: Qualitative Analysis Report",
+        "body": "{{executive_summary_text}}",
+        "attachments": [
+          {
+            "filename": "detailed_analysis.csv",
+            "data": "{{aggregated_results_csv}}"
+          }
+        ]
+      }
     }
   ],
   "business_value": {
     "time_saved": "40+ hours of manual analysis per survey",
     "insight_quality": "Uncovers deeper, more consistent insights than manual methods",
-    "roi": "Enables faster action on employee feedback, helping to reduce attrition."
+    "roi": "Enables faster action on employee feedback, helping to reduce attrition and improve morale."
   }
 }
