@@ -1,0 +1,60 @@
+{
+  "workflow_name": "AI Employee Engagement Survey Analyzer",
+  "description": "Analyzes free-text comments from employee surveys for sentiment and key themes.",
+  "tools_compatible": [
+    "Make.com",
+    "Zapier",
+    "n8n"
+  ],
+  "inputs": {
+    "survey_data_source": "SurveyMonkey API, Google Sheets, or CSV upload",
+    "comment_column_name": "What could we do to improve your experience?",
+    "openai_api_key": "${OPENAI_API_KEY}",
+    "analysis_themes": [
+      "Leadership & Management",
+      "Compensation & Benefits",
+      "Career Growth",
+      "Work-Life Balance",
+      "Company Culture",
+      "Tools & Resources",
+      "Communication"
+    ]
+  },
+  "steps": [
+    {
+      "id": 1,
+      "action": "trigger_survey_completion",
+      "tool": "SurveyMonkey / Google Sheets Webhook"
+    },
+    {
+      "id": 2,
+      "action": "iterate_responses",
+      "tool": "Iterator"
+    },
+    {
+      "id": 3,
+      "action": "analyze_comment",
+      "tool": "OpenAI GPT-4"
+    },
+    {
+      "id": 4,
+      "action": "aggregate_results",
+      "tool": "Data Store / Array Aggregator"
+    },
+    {
+      "id": 5,
+      "action": "generate_summary_report",
+      "tool": "OpenAI GPT-4"
+    },
+    {
+      "id": 6,
+      "action": "deliver_report",
+      "tool": "Email / Slack"
+    }
+  ],
+  "business_value": {
+    "time_saved": "40+ hours of manual analysis per survey",
+    "insight_quality": "Uncovers deeper, more consistent insights than manual methods",
+    "roi": "Enables faster action on employee feedback, helping to reduce attrition."
+  }
+}

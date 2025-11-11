@@ -1,0 +1,59 @@
+
+{
+    "overall_summary": {
+        "total_employees": 1259,
+        "overall_engagement_score": 5.8,
+        "overall_sentiment": 0.15
+    },
+    "detailed_analysis": [
+        {
+            "tech_company": "No",
+            "Country": "Canada",
+            "average_engagement_score": 6.2,
+            "average_sentiment": 0.18,
+            "employee_count": 72
+        },
+        {
+            "tech_company": "No",
+            "Country": "Germany",
+            "average_engagement_score": 5.9,
+            "average_sentiment": 0.12,
+            "employee_count": 45
+        },
+        {
+            "tech_company": "No",
+            "Country": "United Kingdom",
+            "average_engagement_score": 5.5,
+            "average_sentiment": 0.14,
+            "employee_count": 185
+        },
+        {
+            "tech_company": "No",
+            "Country": "United States",
+            "average_engagement_score": 5.7,
+            "average_sentiment": 0.16,
+            "employee_count": 752
+        },
+        {
+            "tech_company": "Yes",
+            "Country": "Canada",
+            "average_engagement_score": 6.8,
+            "average_sentiment": 0.22,
+            "employee_count": 15
+        },
+        {
+            "tech_company": "Yes",
+            "Country": "United Kingdom",
+            "average_engagement_score": 6.5,
+            "average_sentiment": 0.20,
+            "employee_count": 30
+        },
+        {
+            "tech_company": "Yes",
+            "Country": "United States",
+            "average_engagement_score": 6.4,
+            "average_sentiment": 0.19,
+            "employee_count": 160
+        }
+    ]
+}
